@@ -9,5 +9,5 @@ export interface TasksState {
 }
 
 export interface FiltersState {
-  status: string
+  filter: string
 }

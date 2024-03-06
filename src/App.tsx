@@ -3,6 +3,8 @@ import { useState, ChangeEvent, FormEvent } from "react";
 // import { addTask } from "redux/taskSlice";
 import TodoList from "components/TodoList";
 import SharedLayout from "components/SharedLayout";
+import Counter from "components/Counter";
+import FilterTasks from "components/FilterTasks";
 // import useTaskSelector from "hooks";
 
 const App: React.FC = () => {
@@ -18,7 +20,6 @@ const App: React.FC = () => {
   const AddTodo = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
-    console.log(form);
     // dispatch(addTask(form));
     form.reset();
   };
@@ -26,6 +27,8 @@ const App: React.FC = () => {
   return (
     <>
       <SharedLayout />
+      <Counter />
+      <FilterTasks/>
       <form onSubmit={AddTodo}>
         <input type="text" value={newTodo} onChange={handleInputChange} />
         <button type="submit">Add todo</button>

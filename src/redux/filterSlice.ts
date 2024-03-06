@@ -3,7 +3,7 @@ import status from "./constants";
 import { FiltersState } from "utils/types";
 
 const filterInitialState: FiltersState = {
-  status: status.all,
+  filter: status.all,
 };
 
 const filterSlice = createSlice({
@@ -11,7 +11,7 @@ const filterSlice = createSlice({
   initialState: filterInitialState,
   reducers: {
     setStatus(state, action: PayloadAction<string>) {
-      state.status = action.payload;
+      state.filter = action.payload;
     },
   },
 });

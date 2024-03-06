@@ -1,21 +1,28 @@
-import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { toggleCompleted, deleteTask } from "../../redux/taskSlice";
+import { Task } from "utils/types";
 
-interface TodoProps {
-  text: string
-  completed: boolean
-}
-
-const Todo: React.FC<TodoProps> = ({ text }) => {
-  const [isCompleted, setIsCompleted] = useState(false);
+const Todo: React.FC<Task> = (task) => {
+  const dispatch = useDispatch();
+  const handleComplete = (): void => {
+    dispatch(toggleCompleted(task.id));
+  };
+  const handleDelete = (): void => {
+    dispatch(deleteTask(task.id));
+  };
 
   return (
-    <li style={{ textDecoration: isCompleted ? "line-through" : "none" }}>
+    <li
+      key={task.id}
+      style={{ textDecoration: task.completed ? "line-through" : "none" }}
+    >
       <input
         type="checkbox"
-        checked={isCompleted}
-        onChange={(): void => setIsCompleted(!isCompleted)}
+        checked={task.completed}
+        onChange={handleComplete}
       />
-      {text}
+      <p>{task.text}</p>
+      <button onClick={handleDelete}>delete</button>
     </li>
   );
 };

@@ -7,7 +7,7 @@ const taskInitialState: Task[] =
     { id: "0", text: "First task", completed: false },
     { id: "1", text: "Second task", completed: false },
     { id: "2", text: "Third task", completed: false },
-    { id: "3", text: "Fourth task", completed: false },
+    { id: "3", text: "Fourth task", completed: true },
   ]
 
 
