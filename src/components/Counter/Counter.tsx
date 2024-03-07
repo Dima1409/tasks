@@ -1,7 +1,7 @@
 import useTaskSelector from "hooks/useTasksSelector";
 
 const Counter: React.FC = () => {
-  const { tasks } = useTaskSelector();
+  const  tasks  = useTaskSelector();
   const count = tasks.reduce(
     (acc, task) => {
       if (task.completed) {

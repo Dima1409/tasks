@@ -16,7 +16,7 @@ const TodoList: React.FC = () => {
     }
   };
 
-  const { tasks } = useTaskSelector();
+  const tasks = useTaskSelector();
   const { filter } = useFilterSelector();
   const visible = getVisible(tasks, filter);
 

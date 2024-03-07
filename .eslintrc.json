@@ -3,6 +3,7 @@
       "@wemake-services/typescript/base"
     ],
     "rules": {
-      "@typescript-eslint/semi": "off"
+      "@typescript-eslint/semi": "off",
+      "@typescript-eslint/no-explicit-any": "off"
     }
   }

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import status from "./constants";
-import { Filter } from "utils/types";
+import Filter from "utils/types";
 
 const filterInitialState: Filter = {
   filter: status.all,

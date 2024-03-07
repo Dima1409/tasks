@@ -1,12 +1,10 @@
 import { useSelector } from "react-redux";
 import { selectTasks } from "../redux/selectors";
-import { TasksState } from "utils/types";
+import { Task } from "utils/types";
 
-const useTaskSelector = (): TasksState => {
-  const tasks = useSelector(selectTasks);
-  return {
-    tasks,
-  };
+const useTaskSelector = (): Task[] => {
+  const {tasks} = useSelector(selectTasks);
+  return  tasks ;
 };
 
 export default useTaskSelector;

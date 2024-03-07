@@ -1,6 +1,4 @@
 import { useDispatch } from "react-redux";
-// import { selectStatus } from "../../redux/selectors";
-// import status from "redux/constants";
 import { setStatus } from "../../redux/filterSlice";
 import useFilterSelector from "hooks/useFilterSelectors";
 

@@ -8,7 +8,7 @@ export interface TasksState {
   tasks: Task[]
 }
 
-export interface Filter {
+export default interface Filter {
   filter: string
 }
 
