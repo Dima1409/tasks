@@ -24,7 +24,12 @@ const TodoList: React.FC = () => {
     <>
       <ul>
         {visible.map((task) => 
-          <Todo id={task.id} text={task.text} completed={task.completed} />
+          <Todo
+            key={task.id}
+            id={task.id}
+            text={task.text}
+            completed={task.completed}
+          />
         )}
       </ul>
     </>

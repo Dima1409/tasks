@@ -8,6 +8,10 @@ export interface TasksState {
   tasks: Task[]
 }
 
-export interface FiltersState {
+export interface Filter {
   filter: string
+}
+
+export interface FiltersState {
+  filter: Filter
 }

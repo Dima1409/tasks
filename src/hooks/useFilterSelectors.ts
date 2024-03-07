@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 import { selectStatus } from "../redux/selectors";
-import { FiltersState } from "utils/types";
+import { Filter } from "utils/types";
 
-const useFilterSelector = (): FiltersState => {
+const useFilterSelector = (): Filter => {
   const filter = useSelector(selectStatus);
-  return { filter };
+  return filter ;
 };
 
 export default useFilterSelector;

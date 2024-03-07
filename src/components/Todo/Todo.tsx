@@ -13,7 +13,6 @@ const Todo: React.FC<Task> = (task) => {
 
   return (
     <li
-      key={task.id}
       style={{ textDecoration: task.completed ? "line-through" : "none" }}
     >
       <input

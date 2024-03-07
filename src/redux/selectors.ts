@@ -1,6 +1,6 @@
-import { Task, TasksState, FiltersState } from "../utils/types";
+import { Task, TasksState, FiltersState, Filter } from "../utils/types";
 
 const selectTasks = (state: TasksState): Task[] => state.tasks;
-const selectStatus = (state: FiltersState): string => state.filter;
+const selectStatus = (state: FiltersState): Filter => state.filter;
 
 export { selectTasks, selectStatus };
