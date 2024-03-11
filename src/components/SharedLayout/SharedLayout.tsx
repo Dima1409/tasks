@@ -1,19 +1,24 @@
 import Counter from "components/Counter";
 import FilterTasks from "components/FilterTasks";
+import {
+  MainHeader,
+  Header,
+  HeaderMinor,
+  Sections,
+} from "./SharedLayout.styled";
 
 const SharedLayout: React.FC = () => {
   return (
-    <header>
-      <h1>Tasks list</h1>
-      <section>
-        <h2>Tasks</h2>
-        <Counter/>
-      </section>
-      <section>
-        <h2>Filter</h2>
-        <FilterTasks/>
-      </section>
-    </header>
+    <MainHeader>
+      <Header>My tasks list</Header>
+      <Sections>
+        <Counter />
+      </Sections>
+      <Sections>
+        <HeaderMinor>Filter</HeaderMinor>
+        <FilterTasks />
+      </Sections>
+    </MainHeader>
   );
 };
 

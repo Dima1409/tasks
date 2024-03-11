@@ -2,6 +2,14 @@ import { addTask } from "../../redux/taskSlice";
 import { useDispatch } from "react-redux";
 import { ChangeEvent, useState } from "react";
 import taskPattern from "utils/taskPattern";
+import {
+  Form,
+  FormInput,
+  FormButton,
+  ClearButton,
+} from "./CreateTaskForm.styled";
+import { ClearIcon } from "components/Icons/Icons";
+import { theme } from "theme/theme";
 
 const CreateTaskForm: React.FC = () => {
   const [task, setNewTask] = useState<string>("");
@@ -18,19 +26,29 @@ const CreateTaskForm: React.FC = () => {
     setNewTask("");
   };
 
+  const resetForm = (): void => {
+    setNewTask("");
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <Form onSubmit={handleSubmit}>
+      <FormInput
         type="text"
         name="task"
         onChange={handleInputChange}
         value={task}
         placeholder="create new task..."
-      ></input>
-      <button disabled={!taskPattern.test(task) || task === ""} type="submit">
+      ></FormInput>
+      <ClearButton disabled={task === ""} type="button" onClick={resetForm}>
+        <ClearIcon color={theme.colors.invalidColor} />
+      </ClearButton>
+      <FormButton
+        disabled={!taskPattern.test(task) || task === ""}
+        type="submit"
+      >
         Create
-      </button>
-    </form>
+      </FormButton>
+    </Form>
   );
 };
 

@@ -1,6 +1,9 @@
 import { useDispatch } from "react-redux";
 import { toggleCompleted, deleteTask } from "../../redux/taskSlice";
 import { Task } from "utils/types";
+import { DeleteIcon } from "components/Icons/Icons";
+import { TodoItem, TodoInput, TodoText, ButtonDelete } from "./Todo.styled";
+import { theme } from "theme/theme";
 
 const Todo: React.FC<Task> = (task) => {
   const dispatch = useDispatch();
@@ -12,17 +15,19 @@ const Todo: React.FC<Task> = (task) => {
   };
 
   return (
-    <li
+    <TodoItem
       style={{ textDecoration: task.completed ? "line-through" : "none" }}
     >
-      <input
+      <TodoInput
         type="checkbox"
         checked={task.completed}
         onChange={handleComplete}
       />
-      <p>{task.text}</p>
-      <button onClick={handleDelete}>delete</button>
-    </li>
+      <TodoText onClick={handleComplete}>{task.text}</TodoText>
+      <ButtonDelete onClick={handleDelete}>
+        <DeleteIcon color={theme.colors.invalidColor} />
+      </ButtonDelete>
+    </TodoItem>
   );
 };
 

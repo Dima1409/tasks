@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { setStatus } from "../../redux/filterSlice";
 import useFilterSelector from "hooks/useFilterSelectors";
+import { ButtonsWrapper, ButtonFilter } from "./FilterTasks.styled";
 
 const FilterStatus: React.FC = () => {
   const { filter } = useFilterSelector();
@@ -9,26 +10,26 @@ const FilterStatus: React.FC = () => {
     dispatch(setStatus(newFilter));
   };
   return (
-    <>
-      <button
+    <ButtonsWrapper>
+      <ButtonFilter
         onClick={(): void => handleFilterChange("all")}
         disabled={filter === "all"}
       >
         all
-      </button>
-      <button
+      </ButtonFilter>
+      <ButtonFilter
         onClick={(): void => handleFilterChange("active")}
         disabled={filter === "active"}
       >
         active
-      </button>
-      <button
+      </ButtonFilter>
+      <ButtonFilter
         onClick={(): void => handleFilterChange("completed")}
         disabled={filter === "completed"}
       >
         completed
-      </button>
-    </>
+      </ButtonFilter>
+    </ButtonsWrapper>
   );
 };
 

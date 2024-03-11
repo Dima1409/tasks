@@ -3,6 +3,7 @@ import useTaskSelector from "hooks/useTasksSelector";
 import useFilterSelector from "hooks/useFilterSelectors";
 import status from "../../redux/constants";
 import { Task } from "utils/types";
+import { TodosList } from "./TodoList.styled";
 
 const TodoList: React.FC = () => {
   const getVisible = (tasks: Task[], filter: string): Task[] => {
@@ -22,7 +23,7 @@ const TodoList: React.FC = () => {
 
   return (
     <>
-      <ul>
+      <TodosList>
         {visible.map((task) => 
           <Todo
             key={task.id}
@@ -31,7 +32,7 @@ const TodoList: React.FC = () => {
             completed={task.completed}
           />
         )}
-      </ul>
+      </TodosList>
     </>
   );
 };

@@ -1,7 +1,8 @@
 import useTaskSelector from "hooks/useTasksSelector";
+import { CounterDescription } from "./Counter.styled";
 
 const Counter: React.FC = () => {
-  const  tasks  = useTaskSelector();
+  const tasks = useTaskSelector();
   const count = tasks.reduce(
     (acc, task) => {
       if (task.completed) {
@@ -15,8 +16,10 @@ const Counter: React.FC = () => {
   );
   return (
     <>
-      <p>Active tasks: {count.active}</p>
-      <p>Completed tasks: {count.completed}</p>
+      <CounterDescription>Active tasks: {count.active}</CounterDescription>
+      <CounterDescription>
+        Completed tasks: {count.completed}
+      </CounterDescription>
     </>
   );
 };
